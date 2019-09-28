@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     var featuredArtist = emojiItems[i].featuredArtist.join(', ');
     var artist = emojiItems[i].artist.join(', ')
-    
+
     emojiCard +=
       "<div class='emoji-card'><div class='emoji-card-wrapper'><div class='hint-container'><i class='fas fa-question-circle'></i><p class='hint'><span class='type'>" + emojiItems[i].year +
       "</span></p></div><div class='emoji-images'>" + emojiItems[i].emojiImgs +
@@ -22,7 +22,7 @@ $(document).ready(function () {
       if(emojiItems[i].musicVideo){
         emojiCard += "<div class='emoji-card-link'><a href='" + emojiItems[i].musicVideo + "' title='View" + emojiItems[i].title + " Music Video' target='_blank'><i class='fas fa-play-circle'></i></a></div>";
       }
-      
+
       emojiCard += "<div class='title-content'><h3>" + emojiItems[i].title +
       " (" + emojiItems[i].year + ")" + "</h3>";
 
@@ -30,8 +30,8 @@ $(document).ready(function () {
       emojiCard += "<div class='artist-ft-container'><h4>" + artist + " ft. " + featuredArtist + "</h4></div>";
       } else {
         emojiCard += "<div class='artist-container'><h4>" + artist + "</h4></div>";
-    }  
-      
+    }
+
     emojiCard += "</div></div></div></div>";
   }
 
@@ -82,6 +82,21 @@ $(document).ready(function () {
       .find(".hint")
       .removeClass("hint-reveal");
   });
+
+  // move back to top on clicking the up arrow button
+  $("#back-to-top").on("click", function () {
+      $("html").animate({scrollTop: 0});
+      $("#back-to-top").animate({right: "-100px"});
+  });
+
+  // display the back to top button when scrolling down
+  $(document).on("scroll", function () {
+      if ($(document).scrollTop() > 200) {
+        $("#back-to-top").animate({right: "10px"});
+      } else {
+          $("#back-to-top").animate({right: "-100px"});
+      }
+  })
 
 });
 
