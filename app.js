@@ -86,15 +86,14 @@ $(document).ready(function () {
   // move back to top on clicking the up arrow button
   $("#back-to-top").on("click", function () {
       $("html").animate({scrollTop: 0});
-      $("#back-to-top").animate({right: "-100px"});
   });
 
   // display the back to top button when scrolling down
   $(document).on("scroll", function () {
       if ($(document).scrollTop() > 200) {
-        $("#back-to-top").animate({right: "10px"});
+        $("#back-to-top").css("right", "10px");
       } else {
-          $("#back-to-top").animate({right: "-100px"});
+          $("#back-to-top").css("right", "-100px");
       }
   })
 

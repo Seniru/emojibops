@@ -339,6 +339,7 @@ footer img {
     border-radius: 50%;
     z-index: 100;
     box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.4);
+    transition-duration: .4s;
 }
 
 #back-to-top > i {
@@ -346,4 +347,15 @@ footer img {
     vertical-align: middle;
     text-align: center;
     font-size: 30px;
+    background-color: transparent;
+}
+
+#back-to-top:hover {
+    background-color: #ddd;
+    border-radius: 40%;
+}
+
+#back-to-top:active {
+    background-color: #999;
+    border-radius: 20%;
 }
